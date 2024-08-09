@@ -81,7 +81,6 @@
                 "fish"
                 "docker"
                 "lima"
-                # "easy-move-plus-resize"
               ];
       casks = [ "easy-move-plus-resize" ];
       };
