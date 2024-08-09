@@ -55,6 +55,7 @@
     system.activationScripts.postActivation.text = ''
       # Set the default shell as fish for the user. MacOS doesn't do this like nixOS does
       sudo chsh -s ${lib.getBin pkgs.fish}/bin/fish ire
+
     '';
 
     security.pam.enableSudoTouchIdAuth = true;
@@ -62,7 +63,7 @@
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
     environment.systemPackages =
-      [ pkgs.neofetch pkgs.vim pkgs.entr
+      [ pkgs.neofetch pkgs.vim pkgs.entr pkgs.direnv
       ];
 
     homebrew = {
@@ -96,6 +97,7 @@
 
         home.sessionVariables = {
             EDITOR = "vim";
+            CDPATH = "$HOME/code";
         };
 
         programs.fish = {
