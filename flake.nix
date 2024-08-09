@@ -70,15 +70,12 @@
       # onActivation.cleanup = "uninstall";
 
       taps = [];
-      brews = [ "cowsay" "fish" ];
+      brews = [ "cowsay"
+                "fish"
+                "docker"
+                "lima" ];
       casks = [];
-    };
-
-
-      # Create /etc/zshrc that loads the nix-darwin environment.
-      #programs.zsh.enable = true;  # default shell on catalina
-      #programs.fish.enable = true;
-
+      };
     };
     homeconfig = {pkgs, ...}: {
         # this is internal compatibility configuration
