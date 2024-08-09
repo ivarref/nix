@@ -71,11 +71,12 @@
       # clone_target = "ssh";
       # global = { config, ... }: {
       # };
-      # taps =  [ {
-      #           name = "user/tap-repo";
-      #           force_auto_update = true;
-      #          }
-      #         ];
+      taps =  [ {
+                  name = "dmarcotte/easy-move-plus-resize";
+                  clone_target = "https://github.com/dmarcotte/easy-move-resize.git";
+                  force_auto_update = true;
+                }
+              ];
       brews = [ "cowsay"
                 "fish"
                 "docker"
