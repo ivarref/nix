@@ -62,19 +62,26 @@
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
     environment.systemPackages =
-      [ pkgs.neofetch pkgs.vim
+      [ pkgs.neofetch pkgs.vim pkgs.entr
       ];
 
     homebrew = {
       enable = true;
       # onActivation.cleanup = "uninstall";
-
-      taps = [];
+      # clone_target = "ssh";
+      # global = { config, ... }: {
+      # };
+      # taps =  [ {
+      #           name = "user/tap-repo";
+      #           force_auto_update = true;
+      #          }
+      #         ];
       brews = [ "cowsay"
                 "fish"
                 "docker"
-                "lima" ];
-      casks = [];
+                "lima"
+              ];
+      casks = [ ];
       };
     };
     homeconfig = {pkgs, ...}: {
