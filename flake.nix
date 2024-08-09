@@ -81,8 +81,9 @@
                 "fish"
                 "docker"
                 "lima"
+                # "easy-move-plus-resize"
               ];
-      casks = [ ];
+      casks = [ "easy-move-plus-resize" ];
       };
     };
     homeconfig = {pkgs, ...}: {
