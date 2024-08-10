@@ -63,7 +63,11 @@
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
     environment.systemPackages =
-      [ pkgs.neofetch pkgs.vim pkgs.entr pkgs.direnv
+      [ pkgs.neofetch
+        pkgs.vim
+        pkgs.entr
+        pkgs.direnv
+        # pkgs.jdk22
       ];
 
     homebrew = {

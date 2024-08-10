@@ -5,5 +5,5 @@ if [ "$#" -eq 1 ]; then
   darwin-rebuild switch --flake $HOME/.config/nix
   echo "darwin-rebuild exited: $?"
 else
-  printf "flake.nix\n" | entr -c ./switch.sh --do-it
+  printf "$HOME/.config/nix/flake.nix\n" | entr -c $HOME/.config/nix/switch.sh --do-it
 fi
