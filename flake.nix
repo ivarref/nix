@@ -97,7 +97,14 @@
         # Let home-manager install and manage itself.
         programs.home-manager.enable = true;
 
-        home.packages = with pkgs; [];
+        home.packages = with pkgs; [
+          bat
+          babashka
+          clj-condo
+          clojure
+          fzf
+          neil
+        ];
 
         home.sessionVariables = {
             EDITOR = "vim";
