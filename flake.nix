@@ -74,8 +74,6 @@
             pkgs.neofetch
             pkgs.vim
             pkgs.entr
-            pkgs.direnv
-            # pkgs.jdk22
           ];
 
           homebrew = {
@@ -112,6 +110,7 @@
             babashka
             clj-kondo
             clojure
+            direnv
             fzf
             neil
             nixfmt-rfc-style
@@ -131,8 +130,9 @@
               enable = true;
               shellAliases = {
                 swdarwin = "darwin-rebuild switch --flake ~/.config/nix";
+                idea = "open -n \"/Applications/IntelliJ IDEA.app\" --args .";
               };
-              interactiveShellInit = ''
+              shellInit = ''
                 direnv hook fish | source
               '';
             };
