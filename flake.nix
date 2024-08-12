@@ -109,6 +109,9 @@
             shellAliases = {
                 swdarwin = "darwin-rebuild switch --flake ~/.config/nix";
             };
+            interactiveShellInit = ''
+            direnv hook fish | source
+            '';
         };
         programs.git = {
             enable = true;
