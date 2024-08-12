@@ -116,6 +116,7 @@
             neil
             nixfmt-rfc-style
             jdk
+            jq
             ripgrep
             wget
           ];
