@@ -94,16 +94,18 @@
         # this is internal compatibility configuration
         # for home-manager, don't change this!
         home.stateVersion = "23.05";
-        # Let home-manager install and manage itself.
-        programs.home-manager.enable = true;
 
         home.packages = with pkgs; [
           bat
           babashka
-          clj-condo
+          clj-kondo
           clojure
           fzf
           neil
+          nixfmt-rfc-style
+          jdk
+          ripgrep
+          wget
         ];
 
         home.sessionVariables = {
@@ -111,7 +113,8 @@
             CDPATH = "$HOME/code";
         };
 
-        programs.fish = {
+        programs = {
+          fish = {
             enable = true;
             shellAliases = {
                 swdarwin = "darwin-rebuild switch --flake ~/.config/nix";
@@ -119,8 +122,9 @@
             interactiveShellInit = ''
             direnv hook fish | source
             '';
-        };
-        programs.git = {
+          };
+
+          git = {
             enable = true;
             userName = "ire";
             userEmail = "ivar.refsdal@sikt.no";
@@ -129,6 +133,18 @@
                 init.defaultBranch = "main";
                 push.autoSetupRemote = true;
             };
+          };
+
+          direnv = {
+            enable = true;
+            nix-direnv.enable = true;
+          };
+
+          # Sets JAVA_HOME environment variable
+          java.enable = true;
+
+          # Let Home Manager install and manage itself.
+          home-manager.enable = true;
         };
     };
   in
