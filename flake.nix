@@ -127,6 +127,11 @@
             CDPATH = "$HOME/code";
           };
 
+          home.sessionPath = [
+            "$HOME/.config/nix/scripts"
+            "$HOME/.config/nix/bin"
+          ];
+
           programs = {
             fish = {
               enable = true;
