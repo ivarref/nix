@@ -116,7 +116,9 @@
             nixfmt-rfc-style
             jdk
             jq
+            rclone
             ripgrep
+            sshpass
             wget
           ];
 
