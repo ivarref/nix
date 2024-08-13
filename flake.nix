@@ -73,7 +73,6 @@
           environment.systemPackages = [
             pkgs.neofetch
             pkgs.vim
-            pkgs.entr
           ];
 
           homebrew = {
@@ -111,6 +110,7 @@
             clj-kondo
             clojure
             direnv
+            entr
             fzf
             neil
             nixfmt-rfc-style
