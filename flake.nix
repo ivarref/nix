@@ -71,6 +71,7 @@
           environment.systemPackages = [
             pkgs.neofetch
             pkgs.vim
+            pkgs.direnv
           ];
 
           homebrew = {
@@ -89,7 +90,6 @@
             brews = [
               "cowsay"
               "fish"
-              "docker"
             ];
             casks = [ "easy-move-plus-resize" ];
           };
@@ -106,7 +106,7 @@
             babashka
             clj-kondo
             clojure
-            direnv
+            docker
             entr
             fzf
             neil
