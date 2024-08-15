@@ -71,7 +71,6 @@
           environment.systemPackages = [
             pkgs.neofetch
             pkgs.vim
-            pkgs.direnv
           ];
 
           homebrew = {
@@ -106,6 +105,7 @@
             babashka
             clj-kondo
             clojure
+            direnv
             docker
             entr
             fzf
