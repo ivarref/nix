@@ -104,8 +104,9 @@
             babashka
             clj-kondo
             clojure
-            direnv
             docker
+            direnv
+            dive
             entr
             fzf
             neil
@@ -120,7 +121,7 @@
           ];
 
           home.sessionVariables = {
-            EDITOR = "vim";
+            EDITOR = "zed --wait";
             CDPATH = "$HOME/code";
           };
 
@@ -138,6 +139,7 @@
               };
               shellInit = ''
                 direnv hook fish | source
+                export DOCKER_HOST=$(limactl list docker --format 'unix://{{.Dir}}/sock/docker.sock')
               '';
             };
 
