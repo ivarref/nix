@@ -59,6 +59,7 @@
             home = "/Users/ire";
           };
 
+          programs.fish.enable = true;
           system.activationScripts.postActivation.text = ''
             # Set the default shell as fish for the user. MacOS doesn't do this like nixOS does
             sudo chsh -s ${lib.getBin pkgs.fish}/bin/fish ire
@@ -71,11 +72,12 @@
           environment.systemPackages = [
             pkgs.neofetch
             pkgs.vim
+            pkgs.fish
           ];
 
           homebrew = {
             enable = true;
-            # onActivation.cleanup = "uninstall";
+            onActivation.cleanup = "uninstall";
             # clone_target = "ssh";
             # global = { config, ... }: {
             # };
@@ -88,7 +90,6 @@
             ];
             brews = [
               "cowsay"
-              "fish"
             ];
             casks = [ "easy-move-plus-resize" ];
           };
