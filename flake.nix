@@ -88,9 +88,7 @@
                 force_auto_update = true;
               }
             ];
-            brews = [
-              "cowsay"
-            ];
+            brews = [ "cowsay" ];
             casks = [ "easy-move-plus-resize" ];
           };
         };
