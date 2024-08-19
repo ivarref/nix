@@ -122,7 +122,7 @@
 
           home.sessionVariables = {
             EDITOR = "zed --wait";
-            CDPATH = "$HOME/code";
+            CDPATH = "$HOME/code:$HOME/.config";
           };
 
           home.sessionPath = [
@@ -137,9 +137,16 @@
                 swdarwin = "darwin-rebuild switch --flake ~/.config/nix";
                 idea = "open -n \"/Applications/IntelliJ IDEA.app\" --args .";
               };
+              shellAbbrs = {
+                gco = "git checkout";
+                nr = "nix run";
+                nb = "nix build";
+                dr = "docker stop --force dev 2>/dev/null ; docker run --rm -it --name dev dev:dev";
+              };
               shellInit = ''
                 direnv hook fish | source
                 export DOCKER_HOST=$(limactl list docker --format 'unix://{{.Dir}}/sock/docker.sock')
+                source ~/.config/nix/my.fish
               '';
             };
 
