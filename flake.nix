@@ -144,6 +144,7 @@
                 dr = "docker stop --force dev 2>/dev/null ; docker run --rm -it --name dev dev:dev";
               };
               shellInit = ''
+                set -gx DIRENV_LOG_FORMAT ""
                 direnv hook fish | source
                 export DOCKER_HOST=$(limactl list docker --format 'unix://{{.Dir}}/sock/docker.sock')
                 source ~/.config/nix/my.fish
