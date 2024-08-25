@@ -108,7 +108,9 @@
             direnv
             dive
             entr
+            fastfetch
             fzf
+            htop
             neil
             nixfmt-rfc-style
             jdk
