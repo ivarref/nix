@@ -116,6 +116,7 @@
             jdk
             jq
             lima
+            python3
             rclone
             ripgrep
             sshpass
