@@ -120,6 +120,7 @@
             rclone
             ripgrep
             sshpass
+            watch
             wget
           ];
 
