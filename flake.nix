@@ -73,6 +73,7 @@
             pkgs.neofetch
             pkgs.vim
             pkgs.fish
+            pkgs.iterm2
           ];
 
           homebrew = {
@@ -108,10 +109,13 @@
             direnv
             dive
             entr
+            expect
             fastfetch
+            fd
             fzf
             htop
             neil
+            mc
             nixfmt-rfc-style
             jdk
             jq
