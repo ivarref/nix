@@ -15,4 +15,5 @@ if status --is-interactive
     source "$BASE16_SHELL/profile_helper.fish"
 end
 
+base16-onedark
 #base16-materia

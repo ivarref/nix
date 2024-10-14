@@ -154,8 +154,7 @@
               shellInit = ''
                 set -gx DIRENV_LOG_FORMAT ""
                 direnv hook fish | source
-                export DOCKER_HOST=$(limactl list docker --format 'unix://{{.Dir}}/sock/docker.sock')
-                export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+                source $HOME/.config/nix/exports
                 source ~/.config/nix/my.fish
               '';
             };
