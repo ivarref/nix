@@ -154,8 +154,8 @@
               shellInit = ''
                 set -gx DIRENV_LOG_FORMAT ""
                 direnv hook fish | source
+                source $HOME/.config/nix/my.fish
                 source $HOME/.config/nix/exports
-                source ~/.config/nix/my.fish
               '';
             };
 
