@@ -155,12 +155,13 @@
             rclone
             ripgrep
             sshpass
+            tmux
             watch
             wget
           ];
 
           home.sessionVariables = {
-            EDITOR = "zed --wait";
+            EDITOR = "nvim";
             CDPATH = "$HOME/code:$HOME/.config";
           };
 

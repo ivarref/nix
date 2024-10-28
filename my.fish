@@ -17,7 +17,7 @@ abbr -a gfl --function last_history_item
 if status --is-interactive
     set BASE16_SHELL "$HOME/.config/base16-shell/"
     source "$BASE16_SHELL/profile_helper.fish"
-    base16-onedark
+    base16-materia
 end
 
 #base16-materia
