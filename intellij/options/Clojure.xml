@@ -1,0 +1,6 @@
+<application>
+  <component name="ClojureIdeSettings">
+    <option name="structuralStyle" value="1" />
+    <option name="alwaysGenerateStubs" value="true" />
+  </component>
+</application>

@@ -1,0 +1,73 @@
+<application>
+  <component name="DimensionService">
+    <location key="find.popup.0.0.3840.2160@192dpi" x="1566" y="176" />
+    <location key="find.popup.0.0.3420.2214@192dpi" x="1394" y="240" />
+    <location key="find.popup.0.0.5120.2880@192dpi" x="2088" y="230" />
+    <location key="find.popup.5120.0.2880.1864@192dpi" x="6294" y="212" />
+    <location key="find.popup.0.0.2880.1864@192dpi" x="1174" y="204" />
+    <location key="find.popup.0.0.2560.1656@192dpi" x="1044" y="182" />
+    <location key="find.popup.0.0.3440.1440@192dpi" x="1402" y="152" />
+    <size key="GridCell.Tab.0.left.0.0.3840.2160@192dpi" width="1404" height="540" />
+    <size key="GridCell.Tab.0.center.0.0.3840.2160@192dpi" width="1404" height="540" />
+    <size key="GridCell.Tab.0.right.0.0.3840.2160@192dpi" width="1404" height="540" />
+    <size key="GridCell.Tab.0.bottom.0.0.3840.2160@192dpi" width="1404" height="540" />
+    <size key="find.popup.0.0.3840.2160@192dpi" width="1930" height="1434" />
+    <size key="find.popup.0.0.3420.2214@192dpi" width="1298" height="1070" />
+    <size key="find.popup.0.0.5120.2880@192dpi" width="2308" height="1742" />
+    <size key="GridCell.Tab.0.left.0.0.3420.2214@192dpi" width="3160" height="566" />
+    <size key="GridCell.Tab.0.center.0.0.3420.2214@192dpi" width="3160" height="566" />
+    <size key="GridCell.Tab.0.right.0.0.3420.2214@192dpi" width="3160" height="566" />
+    <size key="GridCell.Tab.0.bottom.0.0.3420.2214@192dpi" width="3160" height="566" />
+    <size key="GridCell.Tab.1.left.0.0.3420.2214@192dpi" width="3160" height="566" />
+    <size key="GridCell.Tab.1.center.0.0.3420.2214@192dpi" width="3160" height="566" />
+    <size key="GridCell.Tab.1.right.0.0.3420.2214@192dpi" width="3160" height="566" />
+    <size key="GridCell.Tab.1.bottom.0.0.3420.2214@192dpi" width="3160" height="566" />
+    <size key="GridCell.Tab.0.left.0.0.5120.2880@192dpi" width="1334" height="740" />
+    <size key="GridCell.Tab.0.center.0.0.5120.2880@192dpi" width="1334" height="740" />
+    <size key="GridCell.Tab.0.right.0.0.5120.2880@192dpi" width="1334" height="740" />
+    <size key="GridCell.Tab.0.bottom.0.0.5120.2880@192dpi" width="1334" height="740" />
+    <size key="GridCell.Tab.1.left.0.0.5120.2880@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.1.center.0.0.5120.2880@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.1.right.0.0.5120.2880@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.1.bottom.0.0.5120.2880@192dpi" width="4724" height="1064" />
+    <size key="find.popup.5120.0.2880.1864@192dpi" width="1298" height="1016" />
+    <size key="find.popup.0.0.2880.1864@192dpi" width="1286" height="984" />
+    <size key="GridCell.Tab.0.left.0.0.2880.1864@192dpi" width="1334" height="740" />
+    <size key="GridCell.Tab.0.center.0.0.2880.1864@192dpi" width="1334" height="740" />
+    <size key="GridCell.Tab.0.right.0.0.2880.1864@192dpi" width="1334" height="740" />
+    <size key="GridCell.Tab.0.bottom.0.0.2880.1864@192dpi" width="1334" height="740" />
+    <size key="GridCell.Tab.1.left.0.0.2880.1864@192dpi" width="2228" height="994" />
+    <size key="GridCell.Tab.1.center.0.0.2880.1864@192dpi" width="2228" height="994" />
+    <size key="GridCell.Tab.1.right.0.0.2880.1864@192dpi" width="2228" height="994" />
+    <size key="GridCell.Tab.1.bottom.0.0.2880.1864@192dpi" width="2228" height="994" />
+    <size key="find.popup.0.0.2560.1656@192dpi" width="1286" height="984" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1656@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1656@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1656@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1656@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.1.left.0.0.2560.1656@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.1.center.0.0.2560.1656@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.1.right.0.0.2560.1656@192dpi" width="4724" height="1064" />
+    <size key="GridCell.Tab.1.bottom.0.0.2560.1656@192dpi" width="4724" height="1064" />
+    <size key="find.popup.0.0.3440.1440@192dpi" width="1734" height="850" />
+  </component>
+  <component name="WindowManager">
+    <frame x="564" y="143" width="1500" height="1124" />
+  </component>
+  <component name="WindowStateApplicationService">
+    <state width="487" height="119" key="ShowUsagesActions.dimensionServiceKey" timestamp="1733488175185">
+      <screen x="0" y="25" width="2560" height="1357" />
+    </state>
+    <state width="377" height="95" key="ShowUsagesActions.dimensionServiceKey/0.25.1280.803" timestamp="1729196443209" />
+    <state width="342" height="161" key="ShowUsagesActions.dimensionServiceKey/0.28.1440.904" timestamp="1727980272946" />
+    <state width="521" height="271" key="ShowUsagesActions.dimensionServiceKey/0.31.1280.739" timestamp="1729783411795" />
+    <state width="323" height="95" key="ShowUsagesActions.dimensionServiceKey/0.31.1280.743" timestamp="1730653469437" />
+    <state width="385" height="95" key="ShowUsagesActions.dimensionServiceKey/0.34.1440.840" timestamp="1727984737094" />
+    <state width="319" height="139" key="ShowUsagesActions.dimensionServiceKey/0.34.1440.844" timestamp="1733323190291" />
+    <state width="581" height="95" key="ShowUsagesActions.dimensionServiceKey/1920.34.1440.898/0.0.1920.1080" timestamp="1731414542999" />
+    <state width="415" height="95" key="ShowUsagesActions.dimensionServiceKey/1920.34.1440.898/0.25.1920.997" timestamp="1732269716259" />
+    <state width="531" height="120" key="ShowUsagesActions.dimensionServiceKey/2560.31.1280.797/0.25.2560.1357" timestamp="1727270803777" />
+    <state width="597" height="141" key="ShowUsagesActions.dimensionServiceKey/2560.34.1440.898/0.0.2560.1440" timestamp="1733382196708" />
+    <state width="487" height="119" key="ShowUsagesActions.dimensionServiceKey/2560.34.1440.898/0.25.2560.1357" timestamp="1733488175185" />
+  </component>
+</application>

@@ -1,0 +1,17 @@
+com.jetbrains.darkPurpleTheme
+org.para.plugin.openInSplittedTab
+com.mnw.tabmover
+nix-idea
+org.jetbrains.plugins.github
+org.jetbrains.plugins.gitlab
+com.github.lonre.gruvbox-intellij-theme
+com.tylerthrailkill.intellij.solarized
+com.markskelton.one-dark-theme
+com.github.catppuccin.jetbrains
+monokai-pro
+com.hiberbee.intellij.hiberbee-theme
+com.vermouthx.xcode-theme
+Pythonid
+PythonCore
+com.fapiko.jetbrains.plugins.better_direnv
+com.cursiveclojure.cursive

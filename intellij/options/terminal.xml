@@ -1,0 +1,7 @@
+<application>
+  <component name="TerminalOptionsProvider">
+    <option name="myOverrideIdeShortcuts" value="false" />
+    <option name="myShellPath" value="/etc/profiles/per-user/ire/bin/fish" />
+    <option name="mySoundBell" value="false" />
+  </component>
+</application>

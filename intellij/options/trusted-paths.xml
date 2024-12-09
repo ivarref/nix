@@ -1,0 +1,16 @@
+<application>
+  <component name="Trusted.Paths">
+    <option name="TRUSTED_PROJECT_PATHS">
+      <map>
+        <entry key="$USER_HOME$/Documents/okonomi" value="true" />
+        <entry key="$USER_HOME$/code/cpython" value="true" />
+        <entry key="$USER_HOME$/code/e-sign-service" value="true" />
+        <entry key="$USER_HOME$/code/finddep" value="true" />
+        <entry key="$USER_HOME$/code/flask-nix-example" value="true" />
+        <entry key="$USER_HOME$/code/kaocha" value="true" />
+        <entry key="$USER_HOME$/code/nib-import" value="true" />
+        <entry key="$USER_HOME$/code/yasp" value="true" />
+      </map>
+    </option>
+  </component>
+</application>
