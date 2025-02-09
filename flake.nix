@@ -119,7 +119,7 @@
               #   force_auto_update = true;
               # }
             ];
-            brews = [ "cowsay" ];
+            brews = [ "cowsay" "llm" ];
             casks = [ "easy-move-plus-resize" "fuse-t" ];
           };
         };
@@ -146,6 +146,7 @@
             htop
             neil
             neovim
+	        maven
             mc
             nixfmt-rfc-style
             jdk
@@ -178,10 +179,8 @@
                 idea = "open -n \"/Applications/IntelliJ IDEA.app\" --args .";
               };
               shellAbbrs = {
-                gco = "git checkout";
-                nr = "nix run";
-                nb = "nix build";
-                dr = "docker stop --force dev 2>/dev/null ; docker run --rm -it --name dev dev:dev";
+#                nb = "nix build";
+#                dr = "docker stop --force dev 2>/dev/null ; docker run --rm -it --name dev dev:dev";
               };
               shellInit = ''
                 set -gx DIRENV_LOG_FORMAT ""
