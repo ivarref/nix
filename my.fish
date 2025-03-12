@@ -8,6 +8,7 @@ abbr -a --set-cursor='%' -- vim 'nvim %'
 # abbr -a --set-cursor='%' -- fedz 'zed ~/.config/nix/flake.nix%'
 abbr -a --set-cursor='%' -- fished 'nvim ~/.config/nix/my.fish; source ~/.config/nix/my.fish%'
 abbr -a --set-cursor='%' -- nixed 'nvim ~/.config/nix/flake.nix%'
+abbr -a --set-cursor='%' -- aeroed 'nvim ~/.config/aerospace/aerospace.toml%'
 abbr -a --set-cursor='%' -- alm "llm -m mistral-7b-instruct-v0 '%'"
 abbr -a --set-cursor='%' -- ghostty "/Applications/Ghostty.app/Contents/MacOS/ghostty %"
 
