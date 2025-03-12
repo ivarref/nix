@@ -112,6 +112,19 @@
                 # fuse-t: https://github.com/macos-fuse-t/homebrew-cask/blob/main/Casks/fuse-t.rb
                 force_auto_update = true;
               }
+            {
+              name = "FelixKratz/formulae";
+              clone_target = "git@github.com:FelixKratz/homebrew-formulae.git";
+              force_auto_update = true;
+            }
+            {
+              name = "FelixKratz/JankyBorders";
+              clone_target = "git@github.com:FelixKratz/JankyBorders.git";
+              force_auto_update = true;
+            }
+
+#            "FelixKratz/formulae" = { url = "github:"; }
+
               # {
               #   name = "gromgit/homebrew-fuse";
               #   clone_target = "https://github.com/gromgit/homebrew-fuse.git";
@@ -120,7 +133,7 @@
               # }
             ];
             brews = [ "cowsay" "llm" ];
-            casks = [ "easy-move-plus-resize" "fuse-t" ];
+            casks = [ "easy-move-plus-resize" "fuse-t" "hammerspoon" "nikitabobko/tap/aerospace" ];
           };
         };
       homeconfig =
@@ -144,9 +157,10 @@
             fd
             fzf
             htop
-            neil
+            ncdu
+	        neil
             neovim
-	        maven
+            maven
             mc
             nixfmt-rfc-style
             jdk
