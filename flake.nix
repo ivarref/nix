@@ -113,7 +113,7 @@
                 force_auto_update = true;
               }
             {
-              name = "FelixKratz/formulae";
+              name = "FelixKratz/tap";
               clone_target = "git@github.com:FelixKratz/homebrew-formulae.git";
               force_auto_update = true;
             }
@@ -132,8 +132,8 @@
               #   force_auto_update = true;
               # }
             ];
-            brews = [ "cowsay" "llm" ];
-            casks = [ "easy-move-plus-resize" "fuse-t" "hammerspoon" "nikitabobko/tap/aerospace" ];
+            brews = [ "cowsay" "llm" "FelixKratz/tap/borders" ];
+            casks = [ "easy-move-plus-resize"  "fuse-t" "hammerspoon" "nikitabobko/tap/aerospace" ];
           };
         };
       homeconfig =
