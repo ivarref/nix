@@ -113,15 +113,17 @@
                 force_auto_update = true;
               }
             {
-              name = "FelixKratz/tap";
-              clone_target = "git@github.com:FelixKratz/homebrew-formulae.git";
+              name = "FelixKratz/formulae";
+              clone_target = "git@github.com:FelixKratz/homebrew-formulae.git"; # https://github.com/FelixKratz/homebrew-formulae/blob/master/borders.rb
+              # brew tap FelixKratz/formulae
+              # brew install borders
               force_auto_update = true;
             }
-            {
-              name = "FelixKratz/JankyBorders";
-              clone_target = "git@github.com:FelixKratz/JankyBorders.git";
-              force_auto_update = true;
-            }
+#            {
+#              name = "FelixKratz/JankyBorders";
+#              clone_target = "git@github.com:FelixKratz/JankyBorders.git";
+#              force_auto_update = true;
+#            }
 
 #            "FelixKratz/formulae" = { url = "github:"; }
 
@@ -132,7 +134,7 @@
               #   force_auto_update = true;
               # }
             ];
-            brews = [ "cowsay" "llm" "FelixKratz/tap/borders" ];
+            brews = [ "cowsay" "llm" "borders" ];
             casks = [ "easy-move-plus-resize"  "fuse-t" "hammerspoon" "nikitabobko/tap/aerospace" ];
           };
         };
