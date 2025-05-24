@@ -158,6 +158,7 @@
           home.packages = with pkgs; [
             bat
             babashka
+            cargo
             clj-kondo
             clojure
             docker
@@ -183,6 +184,8 @@
             python3
             rclone
             ripgrep
+            yarn-berry
+            rustc
             scc
             sshpass
             tmux
