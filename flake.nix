@@ -112,20 +112,20 @@
                 # fuse-t: https://github.com/macos-fuse-t/homebrew-cask/blob/main/Casks/fuse-t.rb
                 force_auto_update = true;
               }
-            {
-              name = "FelixKratz/formulae";
-              clone_target = "git@github.com:FelixKratz/homebrew-formulae.git"; # https://github.com/FelixKratz/homebrew-formulae/blob/master/borders.rb
-              # brew tap FelixKratz/formulae
-              # brew install borders
-              force_auto_update = true;
-            }
-#            {
-#              name = "FelixKratz/JankyBorders";
-#              clone_target = "git@github.com:FelixKratz/JankyBorders.git";
-#              force_auto_update = true;
-#            }
+              {
+                name = "FelixKratz/formulae";
+                clone_target = "git@github.com:FelixKratz/homebrew-formulae.git"; # https://github.com/FelixKratz/homebrew-formulae/blob/master/borders.rb
+                # brew tap FelixKratz/formulae
+                # brew install borders
+                force_auto_update = true;
+              }
+              #            {
+              #              name = "FelixKratz/JankyBorders";
+              #              clone_target = "git@github.com:FelixKratz/JankyBorders.git";
+              #              force_auto_update = true;
+              #            }
 
-#            "FelixKratz/formulae" = { url = "github:"; }
+              #            "FelixKratz/formulae" = { url = "github:"; }
 
               # {
               #   name = "gromgit/homebrew-fuse";
@@ -134,8 +134,18 @@
               #   force_auto_update = true;
               # }
             ];
-            brews = [ "cowsay" "llm" "borders" ];
-            casks = [ "easy-move-plus-resize"  "fuse-t" "hammerspoon" "nikitabobko/tap/aerospace" ];
+            brews = [
+              "cowsay"
+              "llm"
+              "borders"
+            ];
+            casks = [
+              "easy-move-plus-resize"
+              "fuse-t"
+              "hammerspoon"
+              "librewolf"
+              "nikitabobko/tap/aerospace"
+            ];
           };
         };
       homeconfig =
@@ -151,6 +161,7 @@
             clj-kondo
             clojure
             docker
+            docker-compose
             direnv
             dive
             entr
@@ -160,17 +171,19 @@
             fzf
             htop
             ncdu
-	        neil
+            neil
             neovim
             maven
             mc
             nixfmt-rfc-style
             jdk
             jq
+            leiningen
             lima
             python3
             rclone
             ripgrep
+            scc
             sshpass
             tmux
             watch
@@ -195,8 +208,8 @@
                 idea = "open -n \"/Applications/IntelliJ IDEA.app\" --args .";
               };
               shellAbbrs = {
-#                nb = "nix build";
-#                dr = "docker stop --force dev 2>/dev/null ; docker run --rm -it --name dev dev:dev";
+                #                nb = "nix build";
+                #                dr = "docker stop --force dev 2>/dev/null ; docker run --rm -it --name dev dev:dev";
               };
               shellInit = ''
                 set -gx DIRENV_LOG_FORMAT ""
