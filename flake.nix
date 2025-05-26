@@ -5,12 +5,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
-    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -26,8 +24,8 @@
         {
 
           # Auto upgrade nix package and the daemon service.
-          services.nix-daemon.enable = true;
-          # nix.package = pkgs.nix;
+          # services.nix-daemon.enable = true;
+          nix.enable = true;
 
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";
@@ -59,13 +57,15 @@
             home = "/Users/ire";
           };
 
+          system.primaryUser = "ire";
+
           programs.fish.enable = true;
           system.activationScripts.postActivation.text = ''
             # Set the default shell as fish for the user. MacOS doesn't do this like nixOS does
             sudo chsh -s ${lib.getBin pkgs.fish}/bin/fish ire
 
             # inspired by: https://www.reddit.com/r/MacOS/comments/16vmecr/ntfs_on_macos_sonoma_hacky_but_works/
-            sudo ln -sf $(readlink /usr/local/lib/libfuse-t.dylib) /usr/local/lib/libfuse.2.dylib
+            sudo ln -sf "$(readlink /usr/local/lib/libfuse-t.dylib)" /usr/local/lib/libfuse.2.dylib
             # ^^ symlink required by ntfs-3g
 
             # example mount command:
@@ -83,7 +83,7 @@
             # sudo ln -sf $(readlink /usr/local/lib/libfuse-t.dylib) /usr/local/lib/libosxfuse.2.dylib
           '';
 
-          security.pam.enableSudoTouchIdAuth = true;
+          security.pam.services.sudo_local.touchIdAuth = true;
 
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
