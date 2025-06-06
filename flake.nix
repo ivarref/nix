@@ -198,12 +198,9 @@
               shellAliases = {
                 idea = "open -n \"/Applications/IntelliJ IDEA.app\" --args .";
               };
-              shellAbbrs = {
-                #                nb = "nix build";
-                #                dr = "docker stop --force dev 2>/dev/null ; docker run --rm -it --name dev dev:dev";
-              };
               shellInit = ''
                 set -gx DIRENV_LOG_FORMAT ""
+                set -gx HOMEBREW_BREWFILE "/Users/ire/.config/nix/Brewfile"
                 direnv hook fish | source
                 source $HOME/.config/nix/my.fish
                 source $HOME/.config/nix/exports
