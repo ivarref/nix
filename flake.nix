@@ -46,8 +46,8 @@
             iosevka
             roboto
             roboto-mono
-            source-sans
             source-code-pro
+            source-sans
             source-serif
           ];
 
@@ -97,36 +97,25 @@
           homebrew = {
             enable = true;
             onActivation.cleanup = "uninstall";
-            # clone_target = "ssh";
-            # global = { config, ... }: {
-            # };
             taps = [
               {
-                name = "dmarcotte/easy-move-plus-resize";
                 clone_target = "https://github.com/dmarcotte/easy-move-resize.git";
                 force_auto_update = true;
+                name = "dmarcotte/easy-move-plus-resize";
               }
               {
-                name = "macos-fuse-t/homebrew-cask";
-                clone_target = "https://github.com/macos-fuse-t/homebrew-cask.git";
                 # fuse-t: https://github.com/macos-fuse-t/homebrew-cask/blob/main/Casks/fuse-t.rb
+                clone_target = "https://github.com/macos-fuse-t/homebrew-cask.git";
                 force_auto_update = true;
+                name = "macos-fuse-t/homebrew-cask";
               }
               {
-                name = "FelixKratz/formulae";
-                clone_target = "git@github.com:FelixKratz/homebrew-formulae.git"; # https://github.com/FelixKratz/homebrew-formulae/blob/master/borders.rb
-                # brew tap FelixKratz/formulae
                 # brew install borders
+                # brew tap FelixKratz/formulae
+                clone_target = "git@github.com:FelixKratz/homebrew-formulae.git"; # https://github.com/FelixKratz/homebrew-formulae/blob/master/borders.rb
                 force_auto_update = true;
+                name = "FelixKratz/formulae";
               }
-              #            {
-              #              name = "FelixKratz/JankyBorders";
-              #              clone_target = "git@github.com:FelixKratz/JankyBorders.git";
-              #              force_auto_update = true;
-              #            }
-
-              #            "FelixKratz/formulae" = { url = "github:"; }
-
               # {
               #   name = "gromgit/homebrew-fuse";
               #   clone_target = "https://github.com/gromgit/homebrew-fuse.git";
@@ -135,9 +124,9 @@
               # }
             ];
             brews = [
+              "borders"
               "cowsay"
               "llm"
-              "borders"
             ];
             casks = [
               "easy-move-plus-resize"
@@ -156,41 +145,43 @@
           home.stateVersion = "23.05";
 
           home.packages = with pkgs; [
-            bat
+            azure-cli
             babashka
+            bat
             cargo
             clj-kondo
             clojure
-            docker
-            docker-compose
             direnv
             dive
+            docker
+            docker-compose
             entr
             expect
             fastfetch
             fd
             fzf
             htop
-            ncdu
-            neil
-            neovim
-            maven
-            mc
-            nixfmt-rfc-style
             jdk
             jq
             leiningen
             lima
+            maven
+            mc
+            mise
+            ncdu
+            neil
+            neovim
+            nixfmt-rfc-style
             python3
             rclone
             ripgrep
-            yarn-berry
             rustc
             scc
             sshpass
             tmux
             watch
             wget
+            yarn-berry
           ];
 
           home.sessionVariables = {
@@ -207,7 +198,6 @@
             fish = {
               enable = true;
               shellAliases = {
-                swdarwin = "darwin-rebuild switch --flake ~/.config/nix";
                 idea = "open -n \"/Applications/IntelliJ IDEA.app\" --args .";
               };
               shellAbbrs = {

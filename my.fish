@@ -12,6 +12,8 @@ abbr -a --set-cursor='%' -- aeroed 'nvim ~/.config/aerospace/aerospace.toml%'
 abbr -a --set-cursor='%' -- alm "llm -m mistral-7b-instruct-v0 '%'"
 abbr -a --set-cursor='%' -- ghostty "/Applications/Ghostty.app/Contents/MacOS/ghostty %"
 
+abbr -a --set-cursor='%' -- swdarwin "sudo darwin-rebuild switch --flake ~/.config/nix %"
+
 function last_history_item
     echo "git ls-files | entr -cr bash -c 'set -x; env FROM_ENTR=1 $history[1]; echo \"Exit code is: \$?\"'"
 end
