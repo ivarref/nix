@@ -13,6 +13,7 @@ abbr -a --set-cursor='%' -- alm "llm -m mistral-7b-instruct-v0 '%'"
 abbr -a --set-cursor='%' -- ghostty "/Applications/Ghostty.app/Contents/MacOS/ghostty %"
 
 abbr -a --set-cursor='%' -- swdarwin "sudo darwin-rebuild switch --flake ~/.config/nix %"
+abbr -a --set-cursor='%' -- bbi "brew bundle install %"
 
 function last_history_item
     echo "git ls-files | entr -cr bash -c 'set -x; env FROM_ENTR=1 $history[1]; echo \"Exit code is: \$?\"'"
@@ -32,4 +33,5 @@ if status --is-interactive
     base16-materia
 end
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 #base16-materia
