@@ -79,8 +79,6 @@
             # 0:     FDisk_partition_scheme                        *16.0 GB    disk4
             # 1:               Windows_NTFS UUI                     16.0 GB    disk4s1
             #                                                       HERE ------^^^^^^^
-
-            # sudo ln -sf $(readlink /usr/local/lib/libfuse-t.dylib) /usr/local/lib/libosxfuse.2.dylib
           '';
 
           security.pam.services.sudo_local.touchIdAuth = true;
