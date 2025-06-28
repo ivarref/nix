@@ -1,3 +1,7 @@
 export BAT_THEME="TwoDark"
 export DOCKER_HOST=$(limactl list docker --format 'unix://{{.Dir}}/sock/docker.sock')
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER=""
+
+export HOMEBREW_BREWFILE="/Users/ire/.config/nix/Brewfile"
+export DIRENV_LOG_FORMAT=""

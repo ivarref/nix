@@ -10,7 +10,8 @@ abbr -a --set-cursor='%' -- alm "llm -m mistral-7b-instruct-v0 '%'"
 abbr -a --set-cursor='%' -- ghostty "/Applications/Ghostty.app/Contents/MacOS/ghostty %"
 
 abbr -a --set-cursor='%' -- swdarwin "sudo darwin-rebuild switch --flake ~/.config/nix %"
-abbr -a --set-cursor='%' -- bbi "brew bundle install %"
+abbr -a --set-cursor='%' -- bbi "bash -c 'cd ~/.config/nix && brew bundle install'%"
+abbr -a --set-cursor='%' -- ideabin "/Applications/IntelliJ\ IDEA.app/Contents/MacOS/idea %"
 
 function last_history_item
     echo "git ls-files | entr -cr bash -c 'set -x; env FROM_ENTR=1 $history[1]; echo \"Exit code is: \$?\"'"

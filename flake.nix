@@ -158,6 +158,7 @@
             expect
             fastfetch
             fd
+            fontconfig
             fzf
             htop
             jdk
@@ -200,11 +201,9 @@
                 idea = "open -n \"/Applications/IntelliJ IDEA.app\" --args .";
               };
               shellInit = ''
-                set -gx DIRENV_LOG_FORMAT ""
                 direnv hook fish | source
                 source $HOME/.config/nix/my.fish
                 source $HOME/.config/nix/exports
-                set --global --export HOMEBREW_BREWFILE "/Users/ire/.config/nix/Brewfile";
               '';
             };
 
