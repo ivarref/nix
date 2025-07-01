@@ -18,7 +18,8 @@ function last_history_item
 end
 
 function last_history_item2
-    echo "git ls-files | entr -ccr bash -c '$history[1]'"
+    set quoted_history "$(string replace -a \' "'\\''" "$history[1]")"
+    echo "git ls-files | entr -ccr bash -c '$quoted_history'"
 end
 
 abbr -a gfl --function last_history_item
