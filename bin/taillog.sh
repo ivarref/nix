@@ -24,20 +24,20 @@ log_status() {
     if [[ "$PUSH_MODE" == "true" ]]; then
       FILE_CHANGE_COUNT="$(git status --porcelain=v1 2>/dev/null | grep -v "^??" | wc -l | sed 's/[^0-9]//g' || true )"
       if [[ "$FILE_CHANGE_COUNT" != "0" ]]; then
-        echo -e -n "$(getdate) $1 waited ${WAITED} seconds. "
+        printf "\r$(getdate) $1 waited ${WAITED} seconds. "
         if [[ "$FILE_CHANGE_COUNT" == "1" ]]; then
-          printf "Pushing %s change ...\n" "${FILE_CHANGE_COUNT}"
+          printf "Pushing %s git change ...\n" "${FILE_CHANGE_COUNT}"
         else
-          printf "Pushing %s changes ...\n" "${FILE_CHANGE_COUNT}"
+          printf "Pushing %s git changes ...\n" "${FILE_CHANGE_COUNT}"
         fi
         git commit -am "wip"
         git push
         NEED_NEWLINE='false'
       else
-        echo -e -n "$(getdate) $1 waited ${WAITED} seconds (no changes)"
+        printf "\r$(getdate) $1 waited ${WAITED} seconds (no git changes)"
       fi
     else
-      echo -e -n "$(getdate) $1 waited ${WAITED} seconds"
+      printf "\r$(getdate) $1 waited ${WAITED} seconds"
     fi
   else
     PREV_LINE="$1"
