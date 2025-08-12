@@ -11,18 +11,42 @@ getdate() {
 
 BEGIN_EPOCH="$(date '+%s')"
 
+PUSH_MODE='false'
+if [[ "$1" == "--push" ]]; then
+  echo "PUSH_MODE enabled"
+  PUSH_MODE='true'
+fi
+
 log_status() {
   if [[ "$PREV_LINE" == "$1" ]]; then
     NOW_EPOCH="$(date '+%s')"
     WAITED="$((NOW_EPOCH-BEGIN_EPOCH))"
-    printf "\r%s" "$(getdate) $1 waited ${WAITED} seconds"
+    if [[ "$PUSH_MODE" == "true" ]]; then
+      FILE_CHANGE_COUNT="$(git status --porcelain=v1 2>/dev/null | grep -v "^??" | wc -l | sed 's/[^0-9]//g' || true )"
+      if [[ "$FILE_CHANGE_COUNT" != "0" ]]; then
+        echo -e -n "$(getdate) $1 waited ${WAITED} seconds. "
+        if [[ "$FILE_CHANGE_COUNT" == "1" ]]; then
+          printf "Pushing %s change ...\n" "${FILE_CHANGE_COUNT}"
+        else
+          printf "Pushing %s changes ...\n" "${FILE_CHANGE_COUNT}"
+        fi
+        git commit -am "wip"
+        git push
+        NEED_NEWLINE='false'
+      else
+        echo -e -n "$(getdate) $1 waited ${WAITED} seconds (no changes)"
+      fi
+    else
+      echo -e -n "$(getdate) $1 waited ${WAITED} seconds"
+    fi
   else
     PREV_LINE="$1"
     BEGIN_EPOCH="$(date '+%s')"
     if [[ "$NEED_NEWLINE" == "true" ]]; then
-      printf "\n%s" "$(getdate) $1 waited 0 seconds"
+      printf "\n"
+      echo -e -n "$(getdate) $1 waited 0 seconds"
     else
-      printf "%s" "$(getdate) $1 waited 0 seconds"
+      echo -e -n "$(getdate) $1 waited 0 seconds"
     fi
   fi
   NEED_NEWLINE='true'
@@ -68,7 +92,11 @@ get_glab_output() {
   set -e
   if [[ "${GLAB_EXIT_CODE}" == "0" ]]; then
     :
-  elif [[ "$GLAB_OUTPUT" == 'ERROR: no open merge request available for "main"' ]]; then
+  elif [[ "$GLAB_OUTPUT" == *"ERROR: no open merge request available for"* ]]; then
+    GLAB_OUTPUT='{}'
+  elif [[ "$GLAB_OUTPUT" == *"No pipelines running or available on branch"* ]]; then
+    GLAB_OUTPUT='{}'
+  elif [[ "$GLAB_OUTPUT" == *"connect: connection refused"* ]]; then
     GLAB_OUTPUT='{}'
   else
     log_error "Unexpected exit code ${GLAB_EXIT_CODE} stdout/stderr was: ${GLAB_OUTPUT}"
@@ -97,13 +125,15 @@ while true; do
 
       if [[ "${PIPELINE_ID}" == "${LAST_PIPELINE_ID}" ]]; then
         if [[ "${PIPELINE_STATUS}" == "running" ]]; then
-          log_status "waiting for pipeline ${PIPELINE_ID} (${PIPELINE_STATUS}) to finish ..."
+          log_status "waiting for pipeline ${PIPELINE_ID} (\e[1;35m${PIPELINE_STATUS}\e[0m) to finish ..."
           sleep 1
         elif [[ "${PIPELINE_STATUS}" == "pending" ]]; then
-          log_status "waiting for pipeline ${PIPELINE_ID} (${PIPELINE_STATUS}) to finish ..."
+          log_status "waiting for pipeline ${PIPELINE_ID} (\e[1;33m${PIPELINE_STATUS}\e[0m) to finish ..."
           sleep 1
         elif [[ "${PIPELINE_STATUS}" == "null" ]]; then
           sleep 1
+        elif [[ "${PIPELINE_STATUS}" == "skipped" ]]; then
+          log_status "waiting for new pipeline ..."
         elif [[ "${PIPELINE_STATUS}" == "failed" ]]; then
           if [[ "[]" == "$(echo "${PIPELINE}" | jq -r '.jobs')" ]]; then
             log_error "pipeline ${PIPELINE_ID} failed and no jobs available"
@@ -115,6 +145,8 @@ while true; do
             log_error "pipeline ${PIPELINE_ID} failed, dumping logs:"
             JOB_ID="$(echo "${PIPELINE}" | jq -r '.jobs[-1].id')"
             glab ci trace "${JOB_ID}"
+            JOB_URL="$( echo "$GLAB_OUTPUT" | jq -r '.jobs[-1].web_url')"
+            log_ok "last job is ${JOB_URL}"
             log_error "pipeline ${PIPELINE_ID} failed"
             break
           fi
@@ -125,6 +157,8 @@ while true; do
           log_ok "pipeline ${PIPELINE_ID} succeeded. Dumping logs:"
           JOB_ID="$(echo "${PIPELINE}" | jq -r '.jobs[-1].id')"
           glab ci trace "${JOB_ID}"
+          JOB_URL="$( echo "$GLAB_OUTPUT" | jq -r '.jobs[-1].web_url')"
+          log_ok "last job is ${JOB_URL}"
           log_ok "pipeline ${PIPELINE_ID} succeeded"
           break
         else
