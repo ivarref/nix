@@ -12,9 +12,11 @@ getdate() {
 BEGIN_EPOCH="$(date '+%s')"
 
 PUSH_MODE='false'
-if [[ "$1" == "--push" ]]; then
-  echo "PUSH_MODE enabled"
-  PUSH_MODE='true'
+if [[ "$#" == "1" ]]; then
+  if [[ "$1" == "--push" ]]; then
+    echo "PUSH_MODE enabled"
+    PUSH_MODE='true'
+  fi
 fi
 
 log_status() {
