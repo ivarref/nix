@@ -19,6 +19,27 @@ if [[ "$#" == "1" ]]; then
   fi
 fi
 
+if ! command -v glab >/dev/null 2>&1
+then
+    echo "command 'glab' not found. Please install it from:"
+    echo "https://docs.gitlab.com/editor_extensions/gitlab_cli/"
+    exit 1
+fi
+
+if ! command -v jq >/dev/null 2>&1
+then
+    echo "command 'jq' not found. Please install it from:"
+    echo "https://jqlang.org/"
+    echo 'Or just google/duckduck it for your distro'
+    exit 1
+fi
+
+if ! command -v git >/dev/null 2>&1
+then
+    echo "command 'git' not found. Please install it."
+    exit 1
+fi
+
 log_status() {
   if [[ "$PREV_LINE" == "$1" ]]; then
     NOW_EPOCH="$(date '+%s')"
@@ -37,9 +58,11 @@ log_status() {
         NEED_NEWLINE='false'
       else
         printf "\r$(getdate) $1 waited ${WAITED} seconds (no git changes)"
+        NEED_NEWLINE='true'
       fi
     else
       printf "\r$(getdate) $1 waited ${WAITED} seconds"
+      NEED_NEWLINE='true'
     fi
   else
     PREV_LINE="$1"
@@ -47,11 +70,12 @@ log_status() {
     if [[ "$NEED_NEWLINE" == "true" ]]; then
       printf "\n"
       echo -e -n "$(getdate) $1 waited 0 seconds"
+      NEED_NEWLINE='true'
     else
       echo -e -n "$(getdate) $1 waited 0 seconds"
+      NEED_NEWLINE='true'
     fi
   fi
-  NEED_NEWLINE='true'
 }
 
 log_info() {
