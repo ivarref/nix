@@ -172,7 +172,7 @@ while true; do
             JOB_ID="$(echo "${PIPELINE}" | jq -r '.jobs[-1].id')"
             glab ci trace "${JOB_ID}"
             JOB_URL="$( echo "$GLAB_OUTPUT" | jq -r '.jobs[-1].web_url')"
-            log_ok "last job is ${JOB_URL}"
+            log_error "last job is ${JOB_URL}"
             log_error "pipeline ${PIPELINE_ID} failed"
             break
           fi
