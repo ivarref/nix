@@ -1,6 +1,6 @@
-export BAT_THEME="TwoDark"
+#export BAT_THEME="TwoDark"
+#export DIRENV_LOG_FORMAT='janeidirenv: %s'
 export DOCKER_HOST=$(limactl list docker --format 'unix://{{.Dir}}/sock/docker.sock')
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_BREWFILE="/Users/ire/.config/nix/Brewfile"
-export DIRENV_LOG_FORMAT=""
+#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export PATH="/Users/ire/.config/nix/bin:$PATH"
